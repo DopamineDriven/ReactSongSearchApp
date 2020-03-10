@@ -68,7 +68,14 @@ export default class SearchApp extends React.Component {
                     }
                 </div>
                 <ul className="media-list">
-                    <ResultItem />
+                    {
+                        this.state.results.map((item, index) => {
+                            return <ResultItem 
+                                key={index}
+                                item={item}
+                                />
+                        })
+                    }
                 </ul>
             </div>
         )

@@ -2,6 +2,8 @@ import React from 'react';
 
 export default function ResultItem(props) {
     return (
-        <div>Search Result</div>
+        <li className="media">
+            <a href={props.item.trackViewUrl} target="_blank"></a>
+        </li>
     )
 }
