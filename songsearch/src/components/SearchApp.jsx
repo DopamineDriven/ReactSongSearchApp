@@ -16,7 +16,7 @@ export default class SearchApp extends React.Component {
     // gives access to makeSearch method within SearchForm component
     // button click sends form info to makeSearch method
     makeSearch = (text) => {
-        console.log(text)
+        fetch('https://itunes.apple.com/search?term=jack+johnson&entity=song')
     }
 
     render() {
