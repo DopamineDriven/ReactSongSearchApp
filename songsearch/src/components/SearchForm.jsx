@@ -14,7 +14,7 @@ export default class SearchForm extends React.Component {
     }
 
     //--------------------------------METHODS----------------------------------------
-    // method -- updateText
+    
     // when text entered, onChange runs and event is passed to this method
     // updates text of input field to state
     updateText = (e) => {
@@ -37,8 +37,13 @@ export default class SearchForm extends React.Component {
                 <span className="input-group-btn">
                     <input
                         value="Search" 
-                        type="button" 
+                        type="submit" 
                         className="btn btn-default"
+                        onClick={(e)=> {
+                            // prevent default to keep page from auto-refreshing
+                            e.preventDefault()
+                            this.props.onSearch(this.state.text)
+                        }}
                     />
                 </span>
             </form>

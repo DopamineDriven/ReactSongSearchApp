@@ -4,7 +4,19 @@ import SearchForm from './SearchForm.jsx';
 
 export default class SearchApp extends React.Component {
     constructor() {
-        super()
+        super();
+
+        //--------------------------------BINDING----------------------------------------
+        this.makeSearch = this.makeSearch.bind(this)
+    }
+
+    //--------------------------------METHODS----------------------------------------
+
+    // makeSearch method passed as prop on SearchForm component, onSearch
+    // gives access to makeSearch method within SearchForm component
+    // button click sends form info to makeSearch method
+    makeSearch = (text) => {
+        console.log(text)
     }
 
     render() {
@@ -17,7 +29,9 @@ export default class SearchApp extends React.Component {
                     <p className="lead text-center">
                         Search any song. Powered by iTunes.
                     </p>
-                    <SearchForm />
+                    <SearchForm 
+                        onSearch={this.makeSearch}
+                    />
                 </div>
                 <ul className="media-list">
                     <ResultItem />
