@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import 'whatwg-fetch';
 import SearchApp from './components/SearchApp.jsx';
 
@@ -10,3 +9,5 @@ const App = () => {
         </div>
     )
 }
+
+export default App;
