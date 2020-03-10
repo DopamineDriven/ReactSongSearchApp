@@ -20,10 +20,12 @@ export default class SearchApp extends React.Component {
     // button click sends form info to makeSearch method
     // http://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/#searchexamples
     makeSearch = (text) => {
+        // replace any spaces inside search text with plus sign
+        const mergedText = text.replace(/ /g, '+')
         this.setState({
             isLoading: true
         })
-        fetch(`https://itunes.apple.com/search?term=${text}&entity=song`)
+        fetch(`https://itunes.apple.com/search?term=${mergedText}&entity=song`)
             .then((response) => {
                 if(response.status >= 200 && response.status < 300) {
                     return response.json()
