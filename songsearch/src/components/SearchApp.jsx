@@ -23,7 +23,9 @@ export default class SearchApp extends React.Component {
         // replace any spaces inside search text with plus sign
         const mergedText = text.replace(/ /g, '+')
         this.setState({
-            isLoading: true
+            isLoading: true,
+            // clear any old search results before new search initiated
+            results: []
         })
         fetch(`https://itunes.apple.com/search?term=${mergedText}&entity=song`)
             .then((response) => {
